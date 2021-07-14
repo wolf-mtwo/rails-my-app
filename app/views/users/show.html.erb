@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+
+<p><%= @user.age %></p>
+
+<ul>
+  <li><a href="/users/<%= @user.id %>/posts">Ver lista de post</a></li>
+  <li><a href="/users/<%= @user.id %>/new-post">Create post</a></li>
+  <li><%= link_to "Edit", edit_user_path(@user) %></li>
+  <li><%= link_to "Destroy", user_path(@user),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
