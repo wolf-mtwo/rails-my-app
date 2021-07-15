@@ -1,15 +1,31 @@
-h1
-  = @user.name
+div class="container"
+  div class="jumbotron jumbotron-fluid"
+    div class="container"
+      h1 class="display-4"
+        | Users Details
+  div class="row"
+    div class="col-3"
+      span
+        ul class="list-group"
+          - @users.each do |user|
+            li class="list-group-item"
+              = link_to user.name, user
 
-p
-  = @user.age
-
-ul
-  li
-    a href="/users/#{@user.id}/posts" Ver lista de post
-  li
-    a href="/users/#{@user.id}/new-post" Create post
-  li
-    = link_to "Edit", edit_user_path(@user)
-  li
-    = link_to "Destroy", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }
+    div class="col-9"
+      div class="input-group mb-3"
+        input type="text" class="form-control" value="#{@user.name}" placeholder="Name" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled=true
+        div class="input-group-append"
+          span class="input-group-text" id="basic-addon2"
+            | Name
+      
+      div class="input-group mb-3"
+        input type="text" class="form-control" value="#{@user.age}" placeholder="Age" aria-label="Recipient's username" aria-describedby="basic-addon2" disabled=true
+        div class="input-group-append"
+          span class="input-group-text" id="basic-addon2"
+            | Age
+        
+      div class="btn-group" role="group" aria-label="Basic example"
+        a class="btn btn-secondary" href="/users/#{@user.id}/posts" Load posts list
+        a class="btn btn-secondary" href="/users/#{@user.id}/new-post" Create new post
+        = link_to "Edit", edit_user_path(@user), class: "btn btn-secondary"
+        = link_to "Destroy", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary"

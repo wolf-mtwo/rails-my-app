@@ -2,7 +2,7 @@ div class="container"
   div class="jumbotron jumbotron-fluid"
     div class="container"
       h1 class="display-4"
-        | Create new user
+        | Create new post
   div class="row"
     div class="col"
-      = render "form", user: @user
+      = render "form", aux: @post, user: @user

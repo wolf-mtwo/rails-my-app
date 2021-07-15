@@ -1,0 +1,18 @@
+
+div class="container"
+  div class="row"
+    h1 Posts list
+
+div class="container"
+  div class="row"
+    - @aux.posts.each do |post|
+      div class="col-4"
+        div class="card"
+          img src="/images/pexels-mati-mango-7878222.jpg" class="card-img-top" alt="..."
+          div class="card-body"
+            h5 class="card-title"
+              = post.title
+            p class="card-text"
+              = post.description
+            a href="#" class="btn btn-primary"
+              Go somewhere

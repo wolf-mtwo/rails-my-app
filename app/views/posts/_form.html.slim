@@ -1,0 +1,21 @@
+= form_with model: aux, url: "/users/#{user.id}/posts", method: :post do |form|
+  div class="form-group"
+    = form.label :title
+    br
+    = form.text_field :title, class: "form-control", id: "post-title"
+    - aux.errors.full_messages_for(:title).each do |message|
+      div
+        = message
+
+  div class="form-group"
+    = form.label :description
+    br
+    = form.text_area :description, class: "form-control", id: "post-description"
+    - aux.errors.full_messages_for(:description).each do |message|
+      div
+        = message
+
+  div class="form-group hide" id="post-save-container"
+    = form.submit
+
+= javascript_include_tag('/test.js')
