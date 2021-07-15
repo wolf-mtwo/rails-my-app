@@ -5,8 +5,10 @@ p
   = @user.age
 
 ul
-  li a href="/users/<%= @user.id %>/posts" Ver lista de post
-  li a href="/users/<%= @user.id %>/new-post">Create post
+  li
+    a href="/users/#{@user.id}/posts" Ver lista de post
+  li
+    a href="/users/#{@user.id}/new-post" Create post
   li
     = link_to "Edit", edit_user_path(@user)
   li
