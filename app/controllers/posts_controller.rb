@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @aux = User.find(params[:user_id])
+    @data = { posts: @aux.posts.as_json }
   end
 
   def new

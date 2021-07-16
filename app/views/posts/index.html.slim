@@ -16,3 +16,8 @@ div class="container"
               = post.description
             a href="#" class="btn btn-primary"
               Go somewhere
+
+= react_component("PostList", props: @data, prerender: false)
+
+= react_component("Footer", prerender: false)
+
