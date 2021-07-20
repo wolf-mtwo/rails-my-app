@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Footer = ({ post }) => {
+const PostItem = ({ post }) => {
   return (
-    <div class="card">
-      <img src="/images/pexels-mati-mango-7878222.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">{post.title}</h5>
-        <p class="card-text">{post.description}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div className="card">
+      <img src="/images/pexels-mati-mango-7878222.jpg" className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{post.title}</h5>
+        <p className="card-text">{post.description}</p>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   );
 };
 
-export default Footer;
+export default PostItem;

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   get "/users/:user_id/new-post", to: "posts#new"
+  get "/users/:user_id/posts/list", to: "posts#list"
   get "/users/:user_id/posts", to: "posts#index"
   post "/users/:user_id/posts", to: "posts#create"
 
